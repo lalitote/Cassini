@@ -9,8 +9,19 @@
 import UIKit
 
 class CassiniViewController: UIViewController {
+    
+    private struct Storyboard {
+        static let ShowImageSegue = "Show Image"
+    }
 
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.ShowImageSegue {
+            if let ivc = segue.destination as? ImageViewController {
+                let imageName = (sender as? UIButton)?.currentTitle
+                ivc.imageURL = DemoURL.NASAImageNamed(imageName: imageName)
+                ivc.title = imageName
+            }
+        }
 
     }
 
