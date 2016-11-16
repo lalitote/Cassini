@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		EAF4D8B81DDA560100CF3B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4D8B71DDA560100CF3B89 /* AppDelegate.swift */; };
-		EAF4D8BA1DDA560100CF3B89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4D8B91DDA560100CF3B89 /* ViewController.swift */; };
 		EAF4D8BD1DDA560100CF3B89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF4D8BB1DDA560100CF3B89 /* Main.storyboard */; };
 		EAF4D8BF1DDA560100CF3B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF4D8BE1DDA560100CF3B89 /* Assets.xcassets */; };
 		EAF4D8C21DDA560100CF3B89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF4D8C01DDA560100CF3B89 /* LaunchScreen.storyboard */; };
+		EAF4D8CB1DDA568800CF3B89 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4D8CA1DDA568800CF3B89 /* ImageViewController.swift */; };
+		EAF4D8CD1DDA5B5600CF3B89 /* DemoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4D8CC1DDA5B5600CF3B89 /* DemoURL.swift */; };
+		EAF4D8CF1DDC600000CF3B89 /* CassiniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4D8CE1DDC600000CF3B89 /* CassiniViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EAF4D8B41DDA560100CF3B89 /* Cassini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cassini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF4D8B71DDA560100CF3B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAF4D8B91DDA560100CF3B89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EAF4D8BC1DDA560100CF3B89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAF4D8BE1DDA560100CF3B89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAF4D8C11DDA560100CF3B89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAF4D8C31DDA560100CF3B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAF4D8CA1DDA568800CF3B89 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		EAF4D8CC1DDA5B5600CF3B89 /* DemoURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoURL.swift; sourceTree = "<group>"; };
+		EAF4D8CE1DDC600000CF3B89 /* CassiniViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CassiniViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		EAF4D8B61DDA560100CF3B89 /* Cassini */ = {
 			isa = PBXGroup;
 			children = (
-				EAF4D8B71DDA560100CF3B89 /* AppDelegate.swift */,
-				EAF4D8B91DDA560100CF3B89 /* ViewController.swift */,
+				EAF4D8CA1DDA568800CF3B89 /* ImageViewController.swift */,
+				EAF4D8CC1DDA5B5600CF3B89 /* DemoURL.swift */,
 				EAF4D8BB1DDA560100CF3B89 /* Main.storyboard */,
-				EAF4D8BE1DDA560100CF3B89 /* Assets.xcassets */,
-				EAF4D8C01DDA560100CF3B89 /* LaunchScreen.storyboard */,
+				EAF4D8CE1DDC600000CF3B89 /* CassiniViewController.swift */,
 				EAF4D8C31DDA560100CF3B89 /* Info.plist */,
+				EAF4D8C91DDA560F00CF3B89 /* Supporting Files */,
 			);
 			path = Cassini;
+			sourceTree = "<group>";
+		};
+		EAF4D8C91DDA560F00CF3B89 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EAF4D8B71DDA560100CF3B89 /* AppDelegate.swift */,
+				EAF4D8BE1DDA560100CF3B89 /* Assets.xcassets */,
+				EAF4D8C01DDA560100CF3B89 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAF4D8BA1DDA560100CF3B89 /* ViewController.swift in Sources */,
+				EAF4D8CB1DDA568800CF3B89 /* ImageViewController.swift in Sources */,
 				EAF4D8B81DDA560100CF3B89 /* AppDelegate.swift in Sources */,
+				EAF4D8CD1DDA5B5600CF3B89 /* DemoURL.swift in Sources */,
+				EAF4D8CF1DDC600000CF3B89 /* CassiniViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

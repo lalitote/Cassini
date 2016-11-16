@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a88-EK-v64">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Split View Controller-->
+        <scene sceneID="Rs0-hv-i60">
+            <objects>
+                <splitViewController id="a88-EK-v64" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="hzZ-e6-0AC" kind="relationship" relationship="masterViewController" id="o5q-3R-emF"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="Bfm-30-HYn"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O3F-29-pa8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2049" y="-124"/>
+        </scene>
+        <!--Cassini-->
+        <scene sceneID="asl-OW-enI">
+            <objects>
+                <viewController id="ceV-Je-OEk" customClass="CassiniViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Da6-pD-AaX"/>
+                        <viewControllerLayoutGuide type="bottom" id="aBQ-lO-5vM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p4X-Bq-suj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cassini" id="emp-V6-u2T"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c9D-l3-2iF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-255.19999999999999" y="-510.49475262368821"/>
+        </scene>
+        <!--Image View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ImageViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +49,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0h-xk-crv"/>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="C0h-xk-crv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AXh-1h-6Ur"/>
+                            <constraint firstItem="C0h-xk-crv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UAc-90-aaN"/>
+                            <constraint firstItem="C0h-xk-crv" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="cnC-oD-Y9J"/>
+                            <constraint firstAttribute="trailing" secondItem="C0h-xk-crv" secondAttribute="trailing" id="jpU-a7-73L"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="C0h-xk-crv" id="WsE-yV-oa8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1153" y="242"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="05X-cK-oGS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hzZ-e6-0AC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0rD-Ir-S9o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ceV-Je-OEk" kind="relationship" relationship="rootViewController" id="l43-Vr-A34"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HbQ-hs-FDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1194.4000000000001" y="-510.49475262368821"/>
         </scene>
     </scenes>
 </document>
