@@ -13,14 +13,33 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     var imageURL: NSURL? {
         didSet {
             image = nil
-            fetchImage()
+            if view.window != nil {
+                fetchImage()
+            }
         }
     }
-    
+    /*
     private func fetchImage() {
         if let url = imageURL {
-            if let imageData = NSData(contentsOf: url as URL){
+            if let imageData = NSData(contentsOf: url as URL) {
                 image = UIImage(data: imageData as Data)
+            }
+        }
+    }*/
+    
+   private func fetchImage() {
+        if let url = imageURL {
+            DispatchQueue.global(qos: .userInitiated).async {
+                let contentOfURL = NSData(contentsOf: url as URL)
+                DispatchQueue.main.async {
+                    if url == self.imageURL {
+                        if let imageData = contentOfURL {
+                            self.image = UIImage(data: imageData as Data)
+                        } else {
+                            print ("ignored data returned from url \(url)")
+                        }
+                    }
+                }
             }
         }
     }
@@ -48,6 +67,13 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if image == nil {
+            fetchImage()
         }
     }
 
